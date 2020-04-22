@@ -52,7 +52,7 @@ class BST {
     std::optional<std::shared_ptr<Node>> find_node(std::shared_ptr<Node> node, T data) {
         if (!node) {
             return std::optional<std::shared_ptr<Node>>();
-        } 
+        }
     }
 
     public:
@@ -60,8 +60,10 @@ class BST {
     std::shared_ptr<Node> insert(T data) {
         if (!root) {
             root = std::make_shared<Node>(data);
+            size++;
             return root;
         }
+        size++;
         return insert_node(root, data);
     }
 
